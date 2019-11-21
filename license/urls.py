@@ -1,19 +1,32 @@
 from django.urls import path
 from .views import (
-    LicenseOrgCreate, LicenseOrgRetrieve,
-    LicenseGetCountries, LicenseGetBusinessAll,
-    LicenseGetCities, LicenseGetBusinessOne
+    LicenseViewCreate_Org, LicenseViewGet_Org,
+    LicenseViewGets_Countries, LicenseViewGets_Org,
+    LicenseViewGets_City, LicenseViewGet_Business,
+    LicenseViewGets_SubModels, LicenseViewGet_SubModels,
+    LicenseViewGets_SubTime, LicenseViewGet_SubTime,
+    LicenseViewGets_Sub, LicenseViewGet_Sub
 )
 
 app_name = 'license'
 urlpatterns = [
 
-    path('add-org/', LicenseOrgCreate.as_view(), name='add-org'),
-    path('get-org/<username>/', LicenseOrgRetrieve.as_view(), name='get-org'),
+    path('org/add/', LicenseViewCreate_Org.as_view(), name='org-add'),
+    path('org/read/<username>/', LicenseViewGet_Org.as_view(), name='org-read-username'),
 
-    path('business-all/', LicenseGetBusinessAll.as_view(), name='business-all'),
-    path('business-one/<name>/', LicenseGetBusinessOne.as_view(), name='business-one'),
+    path('business/read/', LicenseViewGets_Org.as_view(), name='business-read'),
+    path('business/read/<name>/', LicenseViewGet_Business.as_view(), name='business-read-name'),
 
-    path('get-countries/', LicenseGetCountries.as_view(), name='get-countries'),
-    path('get-cities/', LicenseGetCities.as_view(), name='get-cities'),
+    path('country/read/', LicenseViewGets_Countries.as_view(), name='countries-read'),
+    path('city/read/', LicenseViewGets_City.as_view(), name='cities-read-country-search'),
+
+    path('submodel/read/', LicenseViewGets_SubModels.as_view(), name='submodel-read'),
+    path('submodel/read/<name>', LicenseViewGet_SubModels.as_view(), name='submodel-read-name'),
+
+    path('subtime/read/', LicenseViewGets_SubTime.as_view(), name='subtime-read'),
+    path('subtime/read/<name>', LicenseViewGet_SubTime.as_view(), name='subtime-read-name'),
+
+    path('sub/read/', LicenseViewGets_Sub.as_view(), name='sub-read'),
+    path('sub/read/<name>', LicenseViewGet_Sub.as_view(), name='sub-read-name'),
+
 ]
