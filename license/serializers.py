@@ -43,8 +43,11 @@ class SerCities(ModelSerializer):
 
 
 class SerBusinesses(ModelSerializer):
+    show = HyperlinkedIdentityField(
+        view_name='license:business-one',
+        lookup_field='name'
+    )
+
     class Meta:
         model = Business
-        fields = [
-            'id', 'name', 'desc',
-        ]
+        fields = ['id', 'show', 'name', 'desc']
