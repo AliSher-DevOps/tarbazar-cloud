@@ -22,6 +22,3 @@ http://tarbazarglobal.pythonanywhere.com/license/subtime/get/
  http://tarbazarglobal.pythonanywhere.com/license/subtime/get/<name>
 http://tarbazarglobal.pythonanywhere.com/license/subscription/
  http://tarbazarglobal.pythonanywhere.com/license/subscription/<name>
-
-OTHER MODULE
-============
