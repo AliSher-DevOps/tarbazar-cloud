@@ -1,5 +1,3 @@
-from _blake2 import blake2b
-
 from django.db import models
 
 
@@ -124,7 +122,7 @@ class Registration(models.Model):
     updated = models.DateTimeField(auto_now=True, auto_now_add=False)
 
     def __str__(self):
-        return f"{self.organization.name} Subscribed on {self.created}"
+        return F"{self.organization.name} Subscribed on {self.created}"
 
     class Meta:
         verbose_name_plural = 'Registrations'
@@ -167,7 +165,7 @@ class Organization(models.Model):
     isoffcial = models.BooleanField(default=False, null=False)
     ismanufecturer = models.BooleanField(default=False, null=True, blank=True)
     iseller = models.BooleanField(default=True, null=True, blank=True)
-    phone = models.TextField(blank=True, null=True)
+    phone = models.CharField(max_length=100, blank=True, null=True)
     email = models.EmailField(null=False, blank=False)
     logo = models.ImageField(upload_to='images/', null=True, blank=True)
     banner = models.ImageField(upload_to='images/', null=True, blank=True)
@@ -189,7 +187,7 @@ class Organization(models.Model):
 class Frenchise(models.Model):
     name = models.CharField(max_length=100, null=False, blank=False)
     ismain = models.BooleanField(default=True, null=False, blank=False)
-    phone = models.TextField(null=False, blank=False)
+    phone = models.CharField(max_length=100, null=False, blank=False)
     email = models.EmailField(null=False, blank=False)
     address = models.CharField(max_length=100, null=False, blank=False, default='unknown')
     city = models.ForeignKey('City', on_delete=models.CASCADE)
