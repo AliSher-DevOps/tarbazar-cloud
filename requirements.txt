@@ -1,0 +1,7 @@
+django
+markdown
+djangorestframework
+markdown
+django-filter
+pillow
+pygments

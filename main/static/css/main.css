@@ -1,0 +1,10 @@
+body{
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.tb_removespace{
+    margin-top: -15px;
+}
+
