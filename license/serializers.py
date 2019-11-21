@@ -3,10 +3,11 @@ from rest_framework.serializers import (
 )
 from main.models import (
     Organization, Frenchise, Country,
-    City, Business
+    City, Business, SubModel, SubTime, Subscription
 )
 
 
+# ORGANIZATION -------------------------
 class SeriOrganization(ModelSerializer):
     class Meta:
         model = Organization
@@ -26,6 +27,7 @@ class SeriFrenchise(ModelSerializer):
         ]
 
 
+# OTHER -----------------------------
 class SeriCountries(ModelSerializer):
     class Meta:
         model = Country
@@ -44,10 +46,44 @@ class SerCities(ModelSerializer):
 
 class SerBusinesses(ModelSerializer):
     show = HyperlinkedIdentityField(
-        view_name='license:business-one',
+        view_name='license:business-read-name',
         lookup_field='name'
     )
 
     class Meta:
         model = Business
         fields = ['id', 'show', 'name', 'desc']
+
+
+# SUB-SUB>MODEL>TIME --------------
+class SerSubModel(ModelSerializer):
+    show = HyperlinkedIdentityField(
+        view_name='license:submodel-read-name',
+        lookup_field='name'
+    )
+
+    class Meta:
+        model = SubModel
+        fields = 'id', 'show', 'name', 'desc'
+
+
+class SerSubTime(ModelSerializer):
+    show = HyperlinkedIdentityField(
+        view_name='license:subtime-read-name',
+        lookup_field='name'
+    )
+
+    class Meta:
+        model = SubTime
+        fields = 'id', 'show', 'name', 'desc'
+
+
+class SerSub(ModelSerializer):
+    show = HyperlinkedIdentityField(
+        view_name='license:sub-read-name',
+        lookup_field='name'
+    )
+
+    class Meta:
+        model = SubTime
+        fields = 'id', 'name', 'desc', 'show', 'active'
