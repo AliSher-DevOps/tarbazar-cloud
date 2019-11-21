@@ -1,7 +1,4 @@
-from rest_framework import status, generics
-from rest_framework.response import Response
-from rest_framework.views import APIView
-from rest_framework.filters import OrderingFilter, SearchFilter
+from rest_framework.filters import SearchFilter, OrderingFilter
 from rest_framework.generics import (
     CreateAPIView, RetrieveAPIView, ListAPIView
 )
@@ -14,11 +11,6 @@ from .serializers import (
     SeriOrganization, SeriFrenchise
 )
 from .bll import LicenseSetup
-
-
-# class CheckForSome(ListAPIView):
-#     queryset = Organization.objects.all()
-#     serializer_class = SeriOrganization
 
 
 class LicenseOrgCreate(CreateAPIView):
@@ -36,9 +28,21 @@ class LicenseOrgRetrieve(RetrieveAPIView):
     lookup_field = 'username'
 
 
-class LicenseGetBusinesses(ListAPIView):
+class LicenseGetBusinessAll(ListAPIView):
+    serializer_class = SerBusinesses
+
+    def get_queryset(self):
+        queryset_list = Business.objects.all()
+        query = self.request.GET.get("ser")
+        if query:
+            queryset_list = queryset_list.filter(name__icontains=query).distinct()
+        return queryset_list
+
+
+class LicenseGetBusinessOne(RetrieveAPIView):
     queryset = Business.objects.all()
     serializer_class = SerBusinesses
+    lookup_field = 'name'
 
 
 class LicenseGetCountries(ListAPIView):
