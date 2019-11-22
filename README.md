@@ -1,7 +1,7 @@
 # TARBAZAR
 UNDER-DEVELOPMENT
 
-Cloud based Point of Sale System
+Cloud based Point of Sale System + Own Ecommerce
 
 
 
