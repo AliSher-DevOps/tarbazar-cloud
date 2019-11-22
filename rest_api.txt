@@ -18,8 +18,8 @@ LICENSE MODULE
 [01 - 010]    /license/submodels/get/<name>
 [01 - 011] 08 /license/subtime/get/
 [01 - 012]    /license/subtime/get/<name>
-[01 - 013] 09 /license/subscription/
-[01 - 014]    /license/subscription/<name>
+[01 - 013] 09 /license/sub/read/
+[01 - 014]    /license/sub/read/<name>
 
 OTHER MODULE
 ============
