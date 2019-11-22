@@ -14,10 +14,10 @@ LICENSE MODULE
 [01 - 007] 06. /license/cities/read/
 [01 - 008]     /license/cities/read/?ser=..countryname..
 
-[01 - 009] 07 /license/submodels/get/
-[01 - 010]    /license/submodels/get/<name>
-[01 - 011] 08 /license/subtime/get/
-[01 - 012]    /license/subtime/get/<name>
+[01 - 009] 07 /license/submodels/read/
+[01 - 010]    /license/submodels/read/<name>
+[01 - 011] 08 /license/subtime/read/
+[01 - 012]    /license/subtime/read/<name>
 [01 - 013] 09 /license/sub/read/
 [01 - 014]    /license/sub/read/<name>
 
