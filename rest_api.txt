@@ -1,24 +1,36 @@
-
+NOTE: 
+TO Run  to local  server use(behind given urls) "http://127.0.0.1:8000/"
+TO Test on online server use(behind given urls) "tarbazarglobal.pythonanywhere.com"
 
 LICENSE MODULE
 ==============
+'''DEV-READY-USE'''
+[01 - 001] 01. /license/org/add/
+[01 - 002] 02. /license/org/read/<username>/
+[01 - 003] 03. /license/business/read/
+[01 - 004]     /license/business/read/?ser=..business..
+[01 - 005] 04. /license/business/read/<name>
+[01 - 006] 05. /license/countries/read/
+[01 - 007] 06. /license/cities/read/
+[01 - 008]     /license/cities/read/?ser=..countryname..
 
-01. /license/org/add/
-02. /license/org/read/<username>/
-03. /license/business/read/
-    /license/business/read/?ser=..business..
-04. /license/business/read/<name>
-05. /license/countries/read/
-06. /license/cities/read/
-    /license/cities/read/?ser=..countryname..
-
-'''UNDER-DEV'''
-07 /license/submodels/get/
-   /license/submodels/get/<name>
-08 /license/subtime/get/
-   /license/subtime/get/<name>
-09 /license/subscription/
-   /license/subscription/<name>
+[01 - 009] 07 /license/submodels/get/
+[01 - 010]    /license/submodels/get/<name>
+[01 - 011] 08 /license/subtime/get/
+[01 - 012]    /license/subtime/get/<name>
+[01 - 013] 09 /license/subscription/
+[01 - 014]    /license/subscription/<name>
 
 OTHER MODULE
 ============
+'''UNDER-DEV-NOT-READY'''
+[02 - 015] 01 /others/city/read/?limit=.
+[02 - 016]    /others/city/read/<name>
+[02 - 017]    /others/city/read/<country>/?limit=.
+
+[02 - 018] 02 /others/country/read/?limit=.
+[02 - 019]    /others/country/read/<name>
+[02 - 020]    /others/country/read/<city>/
+
+[02 - 021] 03 /others/business/read/?limit=.
+[02 - 022]    /others/business/read/<name>
